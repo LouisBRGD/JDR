@@ -1,0 +1,5 @@
+@if (authService.currentUser() === null) {
+  <app-login></app-login>
+} @else {
+  <app-dashboard></app-dashboard>
+}

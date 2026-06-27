@@ -1,0 +1,18 @@
+<h1>Dashboard</h1>
+
+@if (user()) {
+  <p>Bienvenue {{ user()?.email }}</p>
+  <p>Rôle : {{ user()?.role }}</p>
+
+  <button (click)="logout()">Déconnexion</button>
+
+  <h2>Personnages</h2>
+
+  @for (character of characters; track character.id) {
+    <div>
+      <h3>{{ character.name }}</h3>
+      <p>Rôle : {{ character.role }}</p>
+      <p>PV : {{ character.hp }} / {{ character.max_hp }}</p>
+    </div>
+  }
+}

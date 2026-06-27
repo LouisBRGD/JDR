@@ -1,0 +1,25 @@
+<h1>Connexion JDR</h1>
+
+<label>
+  Email
+  <input
+    type="email"
+    [value]="email()"
+    (input)="email.set($any($event.target).value)"
+  />
+</label>
+
+<label>
+  Mot de passe
+  <input
+    type="password"
+    [value]="password()"
+    (input)="password.set($any($event.target).value)"
+  />
+</label>
+
+<button (click)="login()">Se connecter</button>
+
+@if (errorMessage()) {
+  <p>{{ errorMessage() }}</p>
+}
