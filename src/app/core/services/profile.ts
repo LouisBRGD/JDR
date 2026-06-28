@@ -4,12 +4,14 @@ import { supabase } from '../supabase/supabase';
 @Injectable({
   providedIn: 'root'
 })
-export class CharacterService {
-  async getCharactersByProfileId(profileId: string) {
+export class ProfileService {
+
+  async getProfile(id: string) {
     const { data, error } = await supabase
-      .from('characters')
+      .from('profiles')
       .select('*')
-      .eq('user_id', profileId);
+      .eq('id', id)
+      .single();
 
     if (error) {
       throw error;

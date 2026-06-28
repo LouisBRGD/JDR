@@ -1,33 +1,35 @@
-<div class="login-container">
+<div class="login-page">
+ <div class="login-container">
 
-  <h1 class="site-title">Connexion JDR</h1>
+    <h1 class="site-title">Connexion JDR</h1>
 
-  <div class="login-form">
+    <div class="login-form">
 
-    <label>
-      Email
-      <input
-        type="email"
-        [value]="email()"
-        (input)="email.set($any($event.target).value)"
-      />
-    </label>
+      <label>
+        Email
+        <input
+          type="email"
+          [value]="email()"
+          (input)="email.set($any($event.target).value)"
+        />
+      </label>
 
-    <label>
-      Mot de passe
-      <input
-        type="password"
-        [value]="password()"
-        (input)="password.set($any($event.target).value)"
-      />
-    </label>
+      <label>
+        Mot de passe
+        <input
+          type="password"
+          [value]="password()"
+          (input)="password.set($any($event.target).value)"
+        />
+      </label>
 
-    <button (click)="login()">Se connecter</button>
+      <button (click)="login()">Se connecter</button>
 
-    @if (errorMessage()) {
-      <p>{{ errorMessage() }}</p>
-    }
+      @if (errorMessage()) {
+        <p>{{ errorMessage() }}</p>
+      }
+
+    </div>
 
   </div>
-
 </div>

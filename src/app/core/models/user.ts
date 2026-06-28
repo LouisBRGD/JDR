@@ -1,5 +1,5 @@
 export interface User {
   id: string;
   name: string;
-  role: 'MJ' | 'PLAYER';
+  role: 'ADMIN' | 'Player';
 }

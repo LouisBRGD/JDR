@@ -1,6 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { AuthService } from '../../core/services/auth';
 import { CharacterService } from '../../core/services/character';
+import { ProfileService } from '../../core/services/profile';
 
 @Component({
   selector: 'app-dashboard',
@@ -12,10 +13,12 @@ import { CharacterService } from '../../core/services/character';
 export class DashboardComponent implements OnInit {
   authService = inject(AuthService);
   characterService = inject(CharacterService);
+  profileService = inject(ProfileService);
 
   user = this.authService.currentUser;
 
   characters: any[] = [];
+  profile: any = null;
 
   async ngOnInit(): Promise<void> {
     const currentUser = this.user();
@@ -25,6 +28,9 @@ export class DashboardComponent implements OnInit {
     }
 
     this.characters = await this.characterService.getCharactersByProfileId(currentUser.id);
+    this.profile = await this.profileService.getProfile(currentUser.id);
+    this.characters =
+      await this.characterService.getCharactersByProfileId(currentUser.id);
   }
 
   logout(): void {

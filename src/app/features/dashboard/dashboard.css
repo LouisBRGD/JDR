@@ -1,0 +1,77 @@
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  background: #111;
+  color: #f4e7c5;
+}
+
+.sidebar {
+  width: 260px;
+  padding: 24px;
+  background: rgba(0, 0, 0, 0.75);
+  border-right: 1px solid #8b6a2f;
+}
+
+.sidebar h1 {
+  font-size: 48px;
+  margin-bottom: 40px;
+  color: #d6b56d;
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sidebar button {
+  padding: 14px;
+  background: transparent;
+  color: #f4e7c5;
+  border: 1px solid #8b6a2f;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.main-content {
+  flex: 1;
+}
+
+.topbar {
+  height: 80px;
+  padding: 0 32px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 24px;
+  background: rgba(0, 0, 0, 0.65);
+  border-bottom: 1px solid #8b6a2f;
+}
+
+.dashboard-grid {
+  padding: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.panel {
+  padding: 24px;
+  min-height: 220px;
+  background: rgba(15, 15, 15, 0.82);
+  border: 1px solid #8b6a2f;
+  border-radius: 12px;
+}
+
+.character-panel {
+  grid-column: 1;
+}
+
+.inventory-panel {
+  grid-column: 2;
+  grid-row: span 2;
+}
+
+.skills-panel {
+  grid-column: 1;
+}

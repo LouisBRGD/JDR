@@ -1,18 +1,44 @@
-<h1>Dashboard</h1>
+<div class="app-shell">
 
-@if (user()) {
-  <p>Bienvenue {{ user()?.email }}</p>
-  <p>Rôle : {{ user()?.role }}</p>
+  <aside class="sidebar">
+    <h1>JDR</h1>
 
-  <button (click)="logout()">Déconnexion</button>
+    <nav>
+      <button>Personnage</button>
+      <button>Inventaire</button>
+      <button>Compétences</button>
+    </nav>
+  </aside>
 
-  <h2>Personnages</h2>
+  <main class="main-content">
 
-  @for (character of characters; track character.id) {
-    <div>
-      <h3>{{ character.name }}</h3>
-      <p>Rôle : {{ character.role }}</p>
-      <p>PV : {{ character.hp }} / {{ character.max_hp }}</p>
-    </div>
-  }
-}
+    <header class="topbar">
+      <span>Bienvenue {{ profile?.username }}</span>
+      <button (click)="logout()">Déconnexion</button>
+    </header>
+
+    <section class="dashboard-grid">
+
+      <div class="panel character-panel">
+        <h2>Mon personnage</h2>
+
+        @for (character of characters; track character.id) {
+          <h3>{{ character.name }}</h3>
+          <p>{{ character.role }}</p>
+          <p>PV : {{ character.hp }} / {{ character.max_hp }}</p>
+        }
+      </div>
+
+      <div class="panel inventory-panel">
+        <h2>Inventaire</h2>
+      </div>
+
+      <div class="panel skills-panel">
+        <h2>Compétences</h2>
+      </div>
+
+    </section>
+
+  </main>
+
+</div>
