@@ -2,11 +2,12 @@ import { Component, inject, OnInit } from '@angular/core';
 import { AuthService } from '../../core/services/auth';
 import { CharacterService } from '../../core/services/character';
 import { ProfileService } from '../../core/services/profile';
+import { HealthBarComponent } from '../../shared/components/health-bar/health-bar';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [],
+  imports: [HealthBarComponent],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css'
 })

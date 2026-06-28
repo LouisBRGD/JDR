@@ -1,0 +1,20 @@
+<div class="health-container">
+
+    <span class="health-label">Vie</span>
+
+    <div class="health-bar">
+
+        <div
+            class="health-fill"
+            [style.width.%]="(currentHp() / maxHp()) * 100">
+        </div>
+
+    </div>
+
+    <span class="health-text">
+
+        {{ currentHp() }} / {{ maxHp() }}
+
+    </span>
+
+</div>
