@@ -26,6 +26,11 @@
           <h3>{{ character.name }}</h3>
           <p>{{ character.role }}</p>
           <p>PV : {{ character.hp }} / {{ character.max_hp }}</p>
+          <img
+            class="character-avatar"
+            [src]="character.avatar_url || 'assets/images/characters/default.png'"
+            [alt]="character.name"
+          />
         }
       </div>
 

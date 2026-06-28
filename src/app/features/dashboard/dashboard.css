@@ -75,3 +75,11 @@
 .skills-panel {
   grid-column: 1;
 }
+
+.character-avatar {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #d4b36b;
+}
