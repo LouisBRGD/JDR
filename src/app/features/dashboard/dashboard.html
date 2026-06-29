@@ -4,9 +4,8 @@
     <h1>JDR</h1>
 
     <nav>
-      <button>Personnage</button>
-      <button>Inventaire</button>
-      <button>Compétences</button>
+      <button routerLink="/personnage">Personnage</button>
+      <button routerLink="/informations">Informations</button>
     </nav>
   </aside>
 
@@ -17,35 +16,7 @@
       <button (click)="logout()">Déconnexion</button>
     </header>
 
-    <section class="dashboard-grid">
-
-      <div class="panel character-panel">
-        <h2>Mon personnage</h2>
-
-        @for (character of characters; track character.id) {
-          <h3>{{ character.name }}</h3>
-          <p>{{ character.role }}</p>
-          <img
-            class="character-avatar"
-            [src]="character.avatar_url || 'assets/images/characters/default.png'"
-            [alt]="character.name"
-          />
-          <app-health-bar
-            [currentHp]="character.hp"
-            [maxHp]="character.max_hp">
-          </app-health-bar>
-        }
-      </div>
-
-      <div class="panel inventory-panel">
-        <h2>Inventaire</h2>
-      </div>
-
-      <div class="panel skills-panel">
-        <h2>Compétences</h2>
-      </div>
-
-    </section>
+    <router-outlet></router-outlet>
 
   </main>
 

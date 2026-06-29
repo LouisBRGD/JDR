@@ -1,0 +1,35 @@
+.dashboard-grid {
+  padding: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.panel {
+  padding: 24px;
+  min-height: 220px;
+  background: rgba(15, 15, 15, 0.82);
+  border: 1px solid #8b6a2f;
+  border-radius: 12px;
+}
+
+.character-panel {
+  grid-column: 1;
+}
+
+.inventory-panel {
+  grid-column: 2;
+  grid-row: span 2;
+}
+
+.skills-panel {
+  grid-column: 1;
+}
+
+.character-avatar {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #d4b36b;
+}

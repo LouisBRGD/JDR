@@ -1,0 +1,31 @@
+<section class="dashboard-grid">
+
+  <div class="panel character-panel">
+    <h2>Mon personnage</h2>
+
+    @for (character of characters; track character.id) {
+      <h3>{{ character.name }}</h3>
+      <p>{{ character.role }}</p>
+
+      <img
+        class="character-avatar"
+        [src]="character.avatar_url || 'assets/images/characters/default.png'"
+        [alt]="character.name"
+      />
+
+      <app-health-bar
+        [currentHp]="character.hp"
+        [maxHp]="character.max_hp">
+      </app-health-bar>
+    }
+  </div>
+
+  <div class="panel inventory-panel">
+    <h2>Inventaire</h2>
+  </div>
+
+  <div class="panel skills-panel">
+    <h2>Compétences</h2>
+  </div>
+
+</section>
