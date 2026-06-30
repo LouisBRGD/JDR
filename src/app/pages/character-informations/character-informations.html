@@ -1,4 +1,69 @@
-<h2>Informations du personnage</h2>
+<section class="info-page">
 
-<p>Origine : {{ information?.origin }}</p>
-<p>Histoire : {{ information?.story }}</p>
+   <img
+        class="side-character left"
+        src="assets/images/sprites/gardevoir.png"
+        alt="Gardevoir">
+
+  <div class="info-card">
+    <div class="info-header">
+      <p class="eyebrow">Fiche de personnage</p>
+      <h2>Informations du personnage</h2>
+      <p class="subtitle">
+        Décris ton héros, ses rêves, ses origines et ce qui le rend unique.
+      </p>
+    </div>
+
+    <div class="form-grid">
+      <label>
+        Nom
+        <input type="text" [(ngModel)]="information.name">
+      </label>
+
+      <label>
+        Âge
+        <input type="number" [(ngModel)]="information.age">
+      </label>
+
+      <label>
+        Origine
+        <input type="text" [(ngModel)]="information.origin">
+      </label>
+
+      <label>
+        Rêve
+        <input type="text" [(ngModel)]="information.dream">
+      </label>
+    </div>
+
+    <label>
+      Apparence
+      <textarea rows="3" [(ngModel)]="information.appearance"></textarea>
+    </label>
+
+    <label>
+      Personnalité
+      <textarea rows="3" [(ngModel)]="information.personality"></textarea>
+    </label>
+
+    <label>
+      Histoire
+      <textarea rows="6" [(ngModel)]="information.story"></textarea>
+    </label>
+
+    <label>
+      Autres infos
+      <textarea rows="4" [(ngModel)]="information.extra_infos"></textarea>
+    </label>
+
+    <button class="save-btn" (click)="save()">
+      {{ isSaving ? 'Sauvegarde...' : 'Sauvegarder' }}
+    </button>
+  </div>
+
+  <img
+        class="side-character right"
+        src="assets/images/sprites/gallade.png"
+        alt="Gallame">
+        
+</section>

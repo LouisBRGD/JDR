@@ -19,4 +19,19 @@ export class CharacterInformationService {
 
     return data;
   }
+
+  async updateByCharacterId(characterId: string, information: any) {
+    const { data, error } = await supabase
+      .from('character_information')
+      .update(information)
+      .eq('character_id', characterId)
+      .select()
+      .single();
+
+    if (error) {
+      throw error;
+    }
+
+    return data;
+  }
 }
