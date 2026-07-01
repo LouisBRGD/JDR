@@ -1,99 +1,98 @@
 .site-title {
-
-    color: #f6d365;
-
-    transition:
-        transform .25s ease,
-        color .25s ease,
-        text-shadow .25s ease;
+  color: #f6d365;
+  text-align: center;
+  transition:
+    transform .25s ease,
+    color .25s ease,
+    text-shadow .25s ease;
 }
 
 .site-title:hover {
-
-    color: #fff3c4;
-
-    transform:
-        scale(1.08)
-        translateY(-2px);
-
-    text-shadow:
-        0 0 8px #f6d365,
-        0 0 18px rgba(246,211,101,.6);
-
+  color: #fff3c4;
+  transform: scale(1.08) translateY(-2px);
+  text-shadow:
+    0 0 8px #f6d365,
+    0 0 18px rgba(246,211,101,.6);
 }
 
-label{
-    color:white;
+label {
+  color: white;
 }
 
 .login-container {
-    min-height: 100vh;
+  width: min(420px, 100%);
+  min-height: 100vh;
+  padding: 24px;
 
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-    justify-content: center;
-    align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .login-form {
+  display: flex;
+  flex-direction: column;
 
-    display: flex;
-    flex-direction: column;
+  gap: 18px;
 
-    gap: 18px;
+  width: 100%;
 
-    width: 350px;
+  padding: 35px;
 
-    padding: 35px;
+  background: rgba(20,20,20,.65);
 
-    background: rgba(20,20,20,.65);
+  backdrop-filter: blur(10px);
 
-    backdrop-filter: blur(10px);
-
-    border-radius: 15px;
+  border-radius: 15px;
 }
 
 .login-form label {
+  display: flex;
+  flex-direction: column;
 
-    display: flex;
-    flex-direction: column;
+  gap: 6px;
 
-    gap: 6px;
-
-    color: white;
-
+  color: white;
 }
 
 .login-form input {
+  width: 100%;
+  padding: 10px;
 
-    padding: 10px;
+  border-radius: 8px;
 
-    border-radius: 8px;
-
-    border: none;
-
+  border: none;
 }
 
 .login-form button {
+  margin-top: 10px;
 
-    margin-top: 10px;
+  padding: 12px;
 
-    padding: 12px;
-
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .login-page {
-    min-height: 100vh;
+  min-height: 100vh;
 
-    background-image: url("../../../assets/images/Background.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+  background-image: url("../../../assets/images/Background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 500px) {
+  .login-container {
+    padding: 16px;
+  }
+
+  .login-form {
+    padding: 22px;
+  }
 }

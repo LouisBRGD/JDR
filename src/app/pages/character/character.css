@@ -1,7 +1,9 @@
 .dashboard-grid {
+  width: min(1100px, 100%);
+  margin: 0 auto;
   padding: 40px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 24px;
 }
 
@@ -27,9 +29,33 @@
 }
 
 .character-avatar {
-  width: 160px;
-  height: 160px;
+  width: min(160px, 70vw);
+  height: min(160px, 70vw);
   object-fit: cover;
   border-radius: 50%;
   border: 2px solid #d4b36b;
+}
+
+@media (max-width: 800px) {
+  .dashboard-grid {
+    padding: 20px;
+    grid-template-columns: 1fr;
+  }
+
+  .character-panel,
+  .inventory-panel,
+  .skills-panel {
+    grid-column: auto;
+    grid-row: auto;
+  }
+}
+
+@media (max-width: 420px) {
+  .dashboard-grid {
+    padding: 14px;
+  }
+
+  .panel {
+    padding: 18px;
+  }
 }
