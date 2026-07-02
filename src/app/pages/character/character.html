@@ -4,19 +4,58 @@
     <h2>Mon personnage</h2>
 
     @for (character of characters; track character.id) {
-      <h3>{{ character.name }}</h3>
-      <p>{{ character.role }}</p>
+      <div class="character-header">
+        <div>
+          <h3>{{ character.name }}</h3>
+          <span class="role-badge">{{ character.role }}</span>
+        </div>
+      </div>
 
-      <img
-        class="character-avatar"
-        [src]="character.avatar_url || 'assets/images/characters/default.png'"
-        [alt]="character.name"
-      />
+      <div class="character-container">
+        <img
+          class="character-avatar"
+          [src]="character.avatar_url || 'assets/images/characters/default.png'"
+          [alt]="character.name"
+        />
 
-      <app-health-bar
-        [currentHp]="character.hp"
-        [maxHp]="character.max_hp">
-      </app-health-bar>
+        <div class="character-stats">
+          <div class="stat-row">
+            <span class="stat-label">⚔️ Force</span>
+            <span class="stat-value">{{ character.strength }}</span>
+          </div>
+
+          <div class="stat-row">
+            <span class="stat-label">🎭 Charisme</span>
+            <span class="stat-value">{{ character.charisma }}</span>
+          </div>
+
+          <div class="stat-row">
+            <span class="stat-label">🦶 Agilité</span>
+            <span class="stat-value">{{ character.agility }}</span>
+          </div>
+
+          <div class="stat-row">
+            <span class="stat-label">🧠 Intelligence</span>
+            <span class="stat-value">{{ character.intelligence }}</span>
+          </div>
+
+          <div class="stat-row">
+            <span class="stat-label">🛡️ Résistance</span>
+            <span class="stat-value">{{ character.resistance }}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="health-section">
+        <p class="section-label">❤️ Vie</p>
+
+        <app-health-bar
+          [currentHp]="character.hp"
+          [maxHp]="character.max_hp">
+        </app-health-bar>
+
+        <p class="hp-text">{{ character.hp }} / {{ character.max_hp }}</p>
+      </div>
     }
   </div>
 

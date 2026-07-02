@@ -10,9 +10,18 @@
 .panel {
   padding: 24px;
   min-height: 220px;
-  background: rgba(15, 15, 15, 0.82);
+  background:
+    radial-gradient(circle at top left, rgba(212, 179, 107, 0.1), transparent 35%),
+    rgba(15, 15, 15, 0.86);
   border: 1px solid #8b6a2f;
-  border-radius: 12px;
+  border-radius: 16px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+}
+
+.panel h2 {
+  margin: 0 0 22px;
+  color: #f2d58a;
+  font-size: 28px;
 }
 
 .character-panel {
@@ -28,12 +37,92 @@
   grid-column: 1;
 }
 
+.character-header {
+  margin-bottom: 22px;
+}
+
+.character-header h3 {
+  margin: 0 0 8px;
+  color: #fff4d0;
+  font-size: 24px;
+}
+
+.role-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border: 1px solid rgba(212, 179, 107, 0.45);
+  border-radius: 999px;
+  background: rgba(212, 179, 107, 0.1);
+  color: #d4b36b;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.character-container {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
 .character-avatar {
-  width: min(160px, 70vw);
-  height: min(160px, 70vw);
+  width: min(170px, 70vw);
+  height: min(170px, 70vw);
   object-fit: cover;
   border-radius: 50%;
-  border: 2px solid #d4b36b;
+  border: 3px solid #d4b36b;
+  box-shadow:
+    0 0 0 5px rgba(212, 179, 107, 0.08),
+    0 12px 30px rgba(0, 0, 0, 0.45);
+}
+
+.character-stats {
+  flex: 1;
+  padding: 16px;
+  border: 1px solid rgba(212, 179, 107, 0.25);
+  border-radius: 14px;
+  background: rgba(0, 0, 0, 0.22);
+}
+
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(212, 179, 107, 0.14);
+}
+
+.stat-row:last-child {
+  border-bottom: none;
+}
+
+.stat-label {
+  color: #c9b98d;
+  font-size: 15px;
+}
+
+.stat-value {
+  min-width: 32px;
+  text-align: right;
+  color: #f2d58a;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.health-section {
+  margin-top: 24px;
+}
+
+.section-label {
+  margin: 0 0 8px;
+  color: #f1dfaa;
+  font-weight: 800;
+}
+
+.hp-text {
+  margin: 8px 0 0;
+  color: #fff4d0;
+  font-weight: 700;
 }
 
 @media (max-width: 800px) {
@@ -48,6 +137,19 @@
     grid-column: auto;
     grid-row: auto;
   }
+
+  .character-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .character-avatar {
+    align-self: center;
+  }
+
+  .character-stats {
+    width: 100%;
+  }
 }
 
 @media (max-width: 420px) {
@@ -57,5 +159,9 @@
 
   .panel {
     padding: 18px;
+  }
+
+  .panel h2 {
+    font-size: 24px;
   }
 }
